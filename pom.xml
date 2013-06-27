@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.jtooling</groupId>
+	<artifactId>yanol</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>YANoL</name>
+	<url>http://jtooling.github.io/YANoL</url>
+	<description>Yet Another Notification Library...</description>
+	<inceptionYear>2013</inceptionYear>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/jtooling/YANoL/issues</url>
+	</issueManagement>
+
+	<licenses>
+		<license>
+			<name>BSD License</name>
+			<url>http://www.opensource.org/licenses/bsd-license.php</url>
+			<distribution>repo</distribution>
+			<comments>BSD License</comments>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:https://github.com/jtooling/YANoL.git</connection>
+		<developerConnection>scm:git:https://github.com/jtooling/YANoL.git</developerConnection>
+		<url>https://github.com/jtooling/YANoL</url>
+	</scm>
+
+	<organization>
+		<name>jTooling</name>
+		<url>https://github.com/jtooling</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<name>Paulo Cereda</name>
+			<email>cereda@users.sf.net</email>
+			<id>cereda</id>
+			<url>http://www.twitter.com/paulocereda</url>
+		</developer>
+		<developer>
+			<name>Antoine Neveux</name>
+			<email>contact@antoineneveux.fr</email>
+			<id>aneveux</id>
+			<url>http://antoineneveux.fr</url>
+		</developer>
+		<developer>
+			<name>Herbert Veitengruber</name>
+			<email>herbert@veitengruber.com</email>
+			<id>HerbertV</id>
+			<url>http://herbert.veitengruber.com</url>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>yanol-core</module>
+	</modules>
+
+	<build>
+		<finalName>YANoL</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<inherited>false</inherited>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<version>1.9.0</version>
+				<configuration>
+					<basedir>${basedir}</basedir>
+					<header>etc/header.txt</header>
+					<quiet>false</quiet>
+					<failIfMissing>true</failIfMissing>
+					<aggregate>true</aggregate>
+					<strictCheck>true</strictCheck>
+					<includes>
+						<include>**/src/**</include>
+					</includes>
+					<useDefaultExcludes>true</useDefaultExcludes>
+					<mapping>
+						<ecmd>XML_STYLE</ecmd>
+						<mwe>XML_STYLE</mwe>
+						<ext>SLASHSTAR_STYLE</ext>
+						<xpt>XML_STYLE</xpt>
+						<java>SLASHSTAR_STYLE</java>
+						<aj>SLASHSTAR_STYLE</aj>
+						<properties>SCRIPT_STYLE</properties>
+						<xml>XML_STYLE</xml>
+					</mapping>
+					<useDefaultMapping>false</useDefaultMapping>
+					<properties>
+						<year>2013</year>
+					</properties>
+					<encoding>UTF-8</encoding>
+				</configuration>
+				<executions>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<show>public</show>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
