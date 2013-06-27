@@ -19,10 +19,10 @@
 
 	<licenses>
 		<license>
-			<name>BSD License</name>
-			<url>http://www.opensource.org/licenses/bsd-license.php</url>
+			<name>LGPL 2.1</name>
+			<url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
 			<distribution>repo</distribution>
-			<comments>BSD License</comments>
+			<comments>GNU LESSER GENERAL PUBLIC LICENSE</comments>
 		</license>
 	</licenses>
 
