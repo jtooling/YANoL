@@ -26,6 +26,16 @@
 		</license>
 	</licenses>
 
+	<mailingLists>
+		<mailingList>
+			<name>jTooling mailing list</name>
+			<subscribe>jtooling@googlegroups.com</subscribe>
+			<unsubscribe>jtooling-unsubscribe@googlegroups.com</unsubscribe>
+			<post>jtooling@googlegroups.com</post>
+			<archive>http://groups.google.com/group/jtooling</archive>
+		</mailingList>
+	</mailingLists>
+
 	<scm>
 		<connection>scm:git:https://github.com/jtooling/YANoL.git</connection>
 		<developerConnection>scm:git:https://github.com/jtooling/YANoL.git</developerConnection>
