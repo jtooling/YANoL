@@ -15,27 +15,43 @@ public class Message {
 	private Optional<Date> processedOn;
 	private Optional<String> profileId;
 
-	public Message(final String id, final String title, final String content) {
-		checkNotNull(id, "ID cannot be null");
-		checkArgument(id.length() > 0, "Empty string cannot be used as an id");
-		checkNotNull(title, "Title cannot be null");
-		checkArgument(title.length() > 0,
-				"Empty string cannot be used as a title");
-		checkNotNull(content, "Content cannot be null");
-		checkArgument(content.length() > 0,
-				"Empty string cannot be used as a content");
-		this.id = id;
-		this.title = title;
-		this.content = content;
+	public static class Builder {
+		protected final String id, title, content;
+		protected Optional<String> profileId;
+
+		public Builder(final String id, final String title, final String content) {
+			checkNotNull(id, "ID cannot be null");
+			checkArgument(id.length() > 0,
+					"Empty string cannot be used as an id");
+			checkNotNull(title, "Title cannot be null");
+			checkArgument(title.length() > 0,
+					"Empty string cannot be used as a title");
+			checkNotNull(content, "Content cannot be null");
+			checkArgument(content.length() > 0,
+					"Empty string cannot be used as a content");
+			this.id = id;
+			this.title = title;
+			this.content = content;
+		}
+
+		public Builder profileId(final String profileId) {
+			checkNotNull(profileId, "ProfileId cannot be null");
+			checkArgument(profileId.length() > 0,
+					"Empty string cannot be used as a profileId");
+			this.profileId = Optional.of(profileId);
+			return this;
+		}
+
+		public Message build() {
+			return new Message(this);
+		}
 	}
 
-	public Message(final String id, final String title, final String content,
-			final String profileId) {
-		this(id, title, content);
-		checkNotNull(profileId, "ProfileId cannot be null");
-		checkArgument(profileId.length() > 0,
-				"Empty string cannot be used as a profileId");
-		this.profileId = Optional.of(profileId);
+	private Message(final Builder builder) {
+		id = builder.id;
+		title = builder.title;
+		content = builder.content;
+		profileId = builder.profileId;
 	}
 
 	public String getId() {
